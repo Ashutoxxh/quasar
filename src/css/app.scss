@@ -1,0 +1,205 @@
+// app global css in SCSS form
+// app global css in SCSS form
+// scss modules
+@use "sass:map";
+@use "./theme.scss" as config;
+@each $name, $value in config.$theme-colors {
+  // text-color
+  .text-#{$name} {
+    color: map.get($value, "600") !important;
+  }
+  // bg-color
+  .bg-#{$name} {
+    background: map.get($value, "600") !important;
+  }
+  // border-color
+  .border-#{$name} {
+    border-color: map.get($value, "600") !important;
+  }
+  // stroke-color
+  .stroke-#{$name} {
+    stroke: map.get($value, "600") !important;
+  }
+  @each $variant, $color in $value {
+    // text-color
+    .text-#{$name}-#{$variant} {
+      color: $color !important;
+    }
+    // bg-color
+    .bg-#{$name}-#{$variant} {
+      background: $color !important;
+    }
+    // border-color
+    .border-#{$name}-#{$variant} {
+      border-color: $color !important;
+    }
+    // stroke-color
+    // stroke-color
+    .stroke-#{$name}-#{$variant} {
+      stroke: $color !important;
+    }
+  }
+}
+
+.notification-panel {
+  height: 5%;
+}
+
+// border, border-width and border-radius classes
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.border-2 {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.border-4 {
+  border-width: 4px;
+  border-style: solid;
+}
+
+.border-8 {
+  border-width: 8px;
+  border-style: solid;
+}
+
+.splash-screen {
+  background-color: #1d153f !important;
+}
+
+.custom-separator {
+  background-color: #eeeeee !important;
+}
+
+.dashboard-background {
+  background: #e5e5e5 !important;
+}
+
+@each $side, $side-value in config.$box-sides {
+  .border-#{$side} {
+    border-#{$side-value}-width: 1px;
+    border-#{$side-value}-style: solid;
+  }
+  .border-#{$side}-2 {
+    border-#{$side-value}-width: 2px;
+    border-#{$side-value}-style: solid;
+  }
+  .border-#{$side}-4 {
+    border-#{$side-value}-width: 4px;
+    border-#{$side-value}-style: solid;
+  }
+  .border-#{$side}-8 {
+    border-#{$side-value}-width: 8px;
+    border-#{$side-value}-style: solid;
+  }
+}
+
+// rounded-borders classes - taking sizes from flex-gutter (upto 5xl)
+@each $size, $value in $flex-gutter {
+  .rounded-borders-#{$size} {
+    border-radius: $value !important;
+  }
+}
+
+.rounded-borders-full {
+  border-radius: 100% !important;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "Varela Round", sans-serif;
+}
+
+// anchor tag overrides
+a {
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+// typography helper classes
+.text-underline {
+  text-decoration: underline;
+}
+
+// input placeholder color overrides
+.q-input {
+  .q-placeholder {
+    &::placeholder {
+      color: $grey-500;
+    }
+  }
+}
+
+.q-dialog {
+  // background backdrop override for dialog backdrop
+  .q-dialog__backdrop {
+    background: rgba($grey-600, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+}
+
+.card-shadow {
+  box-shadow: 0px 4px 8px -2px rgba($grey-900, 0.1),
+    0px 2px 4px -2px rgba($grey-900, 0.06);
+}
+
+.text-body3 {
+  font-size: 12px !important;
+}
+
+.custom-btn {
+  width: 90%;
+  margin: 0 auto;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "barlow";
+  line-height: 24px;
+}
+
+.transformSwapIcon {
+  transform: rotateY(180deg) rotateZ(10deg);
+}
+
+.prepCard {
+  border: 1px solid $grey-300;
+}
+
+.selectedCard {
+  border: 1px solid $secondary;
+}
+
+.recommednRecipe {
+  width: 156px;
+  height: 156px;
+  border-radius: 24px !important;
+  object-fit: cover;
+}
+
+.recommendedCard {
+  width: 156px;
+}
+
+.playBtn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.playBtn-img {
+  z-index: 20;
+  position: absolute;
+}

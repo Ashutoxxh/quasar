@@ -1,0 +1,96 @@
+// ------- mixins --------
+
+// input placeholder color mixin
+@mixin placeholder-color($color) {
+  &::placeholder {
+    color: $color !important;
+  }
+}
+
+// -------- variables -----------
+// primary color variants map
+$primary-variants: (
+  "25": #f5f4f9,
+  "50": #ebeaf2,
+  "100": #d8d5e5,
+  "200": #c4c0d8,
+  "300": #b1aacb,
+  "400": #8a80b1,
+  "500": #a29af5,
+  "600": #3c2b7e,
+  "700": #302365,
+  "800": #241a4b,
+  "900": #241a4b,
+);
+// secondary color variants map
+$secondary-variants: (
+  "25": #f6fef9,
+  "50": #ecfdf3,
+  "100": #d1fadf,
+  "200": #a6f4c5,
+  "300": #6ce9a6,
+  "400": #32d583,
+  "500": #12b76a,
+  "600": #25ca92,
+  "700": #027a48,
+  "800": #05603a,
+  "900": #054f31,
+);
+// grey color variants map
+$grey-variants: (
+  "25": #fcfcfd,
+  "50": #f9fafb,
+  "100": #f2f4f7,
+  "200": #e4e7ec,
+  "300": #d0d5dd,
+  "400": #98a2b3,
+  "500": #667085,
+  "600": #475467,
+  "700": #344054,
+  "800": #1d2939,
+  "900": #101828,
+);
+// warning color variants map
+$warning-variants: (
+  "25": #fffcf5,
+  "50": #fffaeb,
+  "100": #fef0c7,
+  "200": #fedf89,
+  "300": #fec84b,
+  "400": #fdb022,
+  "500": #f79009,
+  "600": #dc6803,
+  "700": #b54708,
+  "800": #93370d,
+  "900": #7a2e0e,
+);
+// error color variants map
+$error-variants: (
+  "25": #fffbfa,
+  "50": #fef3f2,
+  "100": #fee4e2,
+  "200": #fecdca,
+  "300": #fda29b,
+  "400": #f97066,
+  "500": #f04438,
+  "600": #d92d20,
+  "700": #b42318,
+  "800": #912018,
+  "900": #7a271a,
+);
+// theme colors
+// combination of single color as well as variants map
+$theme-colors: (
+  "primary": $primary-variants,
+  "secondary": $secondary-variants,
+  "grey": $grey-variants,
+  "warning": $warning-variants,
+  "error": $error-variants,
+);
+// box model side values
+$box-sides: (
+  "t": top,
+  "b": bottom,
+  "l": left,
+  "r": right,
+);
